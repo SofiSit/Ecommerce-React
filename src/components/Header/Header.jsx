@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "boxicons";
 import logo from "../../assets/images/logo.png";
-import { Link , NavLink} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { DataContext } from "../context/Dataprovider";
 
 const Header = () => {
@@ -27,7 +27,7 @@ const Header = () => {
           <Link to="/"> Home </Link>
         </li>
         <li>
-          <Link to="/ProductList">Products</Link>
+          <Link to="/ProductList">Shop</Link>
         </li>
       </ul>
       <div className="containIcons">

@@ -101,14 +101,16 @@ header .cart1 span{
 }                                                                                                  span {
 }
 /*--------------------containerNews----------------------*/
-.getInspo__container{
+.info__container{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: #f7efd8;
+  background-color: rgb(255, 222, 209);
+  margin-top: 20px;
 }
 
+
 .news__container--column img {
-  width: 100%;
+  width: 98%;
   position: relative;
   max-width: 450px;
   max-height: 450px;
@@ -125,7 +127,8 @@ header .cart1 span{
 }
 
 .news__container {
-  width: 100%;
+
+  width: 98%;
   max-width: 1530px;
   margin: 0 auto;
   padding: 2rem;
@@ -140,22 +143,20 @@ header .cart1 span{
   padding-bottom: 10px;
 }
 .h5News{
-  text-align: center;
   margin-top: 100px;
   font-family: 'Bentham', serif;
   font-size: 1.3rem;
   color: rgb(67, 63, 44);
   letter-spacing: 0.1em;
+  justify-content:flex-start;
 }
-.pNews{
+/* .pNews{
   font-family: 'Trocchi', serif;
-}
+} */
 
 .containerInspired{
   background-color: rgb(247, 240, 242);
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
+ 
 
   
 }
@@ -468,7 +469,7 @@ span {
 
 .product-price-btn button {
   float: right;
-  display: inline-block;
+  /*display: inline-block;*/
   height: 50px;
   width: 176px;
   margin: 0 40px 0 16px;
@@ -489,6 +490,17 @@ span {
 
 .product-price-btn button:hover {
   background-color: #79b0a1;
+}
+
+
+/*------------------CAROUSEL--------*/
+.carousel img{
+  width: 100% !important;
+height: 400px;
+object-fit: cover;
+}
+.carousel h3{
+  color: #474747;
 }
 /*-----------------------FOOTER----------------------*/
 footer {
