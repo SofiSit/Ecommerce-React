@@ -11,8 +11,9 @@ export const DataProvider = (props) => {
   const [products, setProducts] = useState([]);
   const [menu, setMenu] = useState(false);
   const [cart, setCart] = useState(() => {
-    const dataCart = JSON.parse(localStorage.getItem("dataCart"));
-    return dataCart;
+    const datCart =localStorage.getItem('Cart');
+    const dataCart = JSON.parse(datCart);
+    return dataCart ? dataCart:[]; //no puede ser null 
   });
 
   useEffect(() => {
@@ -45,7 +46,7 @@ export const DataProvider = (props) => {
 
   const addCart = (id) => {
    const check = cart.every((item) => {
-       // este every lo que hace es evaluar si el id es === al id del producto en el array cart
+       // este every lo que hace es evaluar si el item.id es !== al id del producto en el array cart
       return item.id !== id;
     });
     if (check) {
@@ -59,20 +60,20 @@ export const DataProvider = (props) => {
     } else {
       alert("The product is already in the cart");
     } 
-    
-  };
 
-  /* 
- useEffect   ( () => {     
+  };
+ 
+   
+ /*  useEffect   ( () => {     
    const dataCart= JSON.parse(localStorage.getItem("dataCart"))//al momento de hacer la petision s eparsea la data, peticion getitem traemos lo del ls dentro de carrito
    if(dataCart){
        setCart(dataCart);
    }
-}, []);   */
+}, []);    */
 
   useEffect(() => {
     localStorage.setItem("dataCart", JSON.stringify(cart)); // guarda nuestro localstorage dentro de data carrito parseado
-  }, [cart]);
+  }, [cart]); 
 
   const value = {
     products: [products],

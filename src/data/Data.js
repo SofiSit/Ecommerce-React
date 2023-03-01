@@ -4,9 +4,9 @@
     status: "success",
     items: [
       {
-        title: "FULL SET",
-      price: 75.00,
-      img: require("../assets/images/83001553_3138872639485492_6073923803075291964_n.jpg"),
+        title: "HAND MODELING COURSE",
+      price: 100.00,
+      img: require('../assets/images/taller-de-cerámica-2021-2.png'),
       id: 1,
       },
       {
@@ -57,6 +57,24 @@
       price: 70.00,
       img: require('../assets/images/94203371_3010347592337998_4646091270563823616_n.jpg'),
       id: 9,
+      },
+      {
+        title: "OVEN COURSE",
+      price: 150.00,
+      img: require('../assets/images/MF_IMG_06_landincocciones_04.jpg'),
+      id: 10,
+      },
+      {
+        title: "FULL SET",
+      price: 75.00,
+      img: require("../assets/images/83001553_3138872639485492_6073923803075291964_n.jpg"),
+      id: 11,
+      },
+      {
+        title: "LATHE COURSE",
+      price: 150.00,
+      img: require('../assets/images/manos-alfarero-femenino-irreconocible-haciendo-jarron-arcilla-rueda-lanzamiento.jpg'),
+      id: 12,
       },
       
     ],

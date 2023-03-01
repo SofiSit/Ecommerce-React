@@ -21,10 +21,8 @@ const ProductItem = ({ id, title, price, img }) => {
           <span>{price}</span> €
         </p>
         <button
-          /* type="submit"
-          value="add" */
           onClick={() => {
-            addCart(id);
+           addCart(id);
           }}
         >
          Add to Cart

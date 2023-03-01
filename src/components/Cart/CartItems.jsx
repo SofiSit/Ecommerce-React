@@ -34,7 +34,7 @@ const CartItems = () => {
         </div>
         <h2>Shop</h2>
         <div className="cart__center">
-          {cart.map((product) => (
+          {  cart && cart.map((product) => (
             <div className="cart__item">
               <img src={product.img} alt="" width={310} />
               <div>

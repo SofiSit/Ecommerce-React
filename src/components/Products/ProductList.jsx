@@ -21,12 +21,10 @@ const ProductList = () => {
         <Search handleFilter={handleFilter} filter={filter} />
       </div>
       <div className="products">
-        {products
-          .filter((product) => {
+        {products && products.filter((product) => {
             if (!filter) return true;
             else {
               const produTitle = product.title.toLowerCase();
-
               return produTitle.includes(filter.toLocaleLowerCase());
             }
           })

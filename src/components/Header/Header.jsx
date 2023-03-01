@@ -36,7 +36,7 @@ const Header = () => {
       </div>
       <div className="cart1" onClick={toggleMenu}>
         <box-icon name="cart-alt" color="white"></box-icon>
-        <span className="item__total">{cart.length}</span>
+        <span className="item__total">{cart?.length}</span>
       </div></div>
       
       
