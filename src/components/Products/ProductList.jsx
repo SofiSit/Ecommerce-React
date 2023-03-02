@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { DataContext } from "../context/Dataprovider";
+import { CartContext } from "../../context/CartProvider";
 import ProductItem from "./ProductItem";
 import Search from "../Search/Search";
 import { useSearchParams } from "react-router-dom";
 
 const ProductList = () => {
-  const value = useContext(DataContext);
+  const value = useContext(CartContext);
   const [products] = value.products;
 
   const [searchParams, setSearchParams] = useSearchParams();

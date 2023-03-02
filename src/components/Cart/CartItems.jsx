@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { DataContext } from "../context/Dataprovider";
+import { CartContext } from "../../context/CartProvider";
 
 const CartItems = () => {
-  const value = useContext(DataContext); // usecontext es para usar el contexto de datacontext
+  const value = useContext(CartContext); // usecontext es para usar el contexto de datacontext
   const [menu, setMenu] = value.menu;
   const [cart, setCart] = value.cart;
 

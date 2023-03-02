@@ -1,11 +1,11 @@
 import React, { createContext, useState, useEffect } from "react";
 import toast from "react-hot-toast";
 
-import Data from "../../data/Data"; //import data
+import Data from "../data/Data"; //import data
 
-export const DataContext = createContext(); //exportamos el contexto
+export const CartContext = createContext(); //exportamos el contexto
 
-export const DataProvider = (props) => {
+export const CartProvider = (props) => {
   //crear contexto qu emaneja nuestras variables globales que en este caso son los productos, la data sera consumida de forma globla en carrito detalles y lista, creo el usestate que es el manejador de estados local, nuestro producto es un objeto que contiene los datos de cada producto.
 
   const [products, setProducts] = useState([]);
@@ -82,6 +82,6 @@ export const DataProvider = (props) => {
   };
 
   return (
-    <DataContext.Provider value={value}>{props.children}</DataContext.Provider>
+    <CartContext.Provider value={value}>{props.children}</CartContext.Provider>
   );
 };

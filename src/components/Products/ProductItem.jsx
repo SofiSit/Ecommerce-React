@@ -1,11 +1,31 @@
 import React, { useContext } from "react";
-import { DataContext } from "../context/Dataprovider";
+import { CartContext } from "../../context/CartProvider";
 import toast, { Toaster } from "react-hot-toast";
 
+
 const ProductItem = ({ id, title, price, img }) => {
-  const value = useContext(DataContext);
+  const value = useContext(CartContext);
   const addCart = value.addCart;
 
+
+  //FAV
+ /*  const hearToggle = () => {
+    const provisional = wishes.find(wish => wish.id === item.id)
+    if (provisional) {
+        return (
+            <button className='heartButton' type="submit" value='add' onClick={() => { handleAddWished(item) }}>
+                <i className="fa fa-heart card red" aria-hidden="true"></i>
+            </button>
+        )
+    } else {
+        return (
+            <div className='heartButton' type="submit" value='add' onClick={() => { handleAddWished(item) }}>
+                <i className="fa fa-heart card"></i>
+            </div>
+        )
+    }
+}
+ */
   return (
     <div className="product">
       <a href="#">
