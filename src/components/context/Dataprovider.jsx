@@ -11,8 +11,7 @@ export const DataProvider = (props) => {
   const [products, setProducts] = useState([]);
   const [menu, setMenu] = useState(false);
   const [cart, setCart] = useState(() => {
-    const datCart =localStorage.getItem('Cart');
-    const dataCart = JSON.parse(datCart);
+    const dataCart= JSON.parse(localStorage.getItem("cart"));
     return dataCart ? dataCart:[]; //no puede ser null 
   });
 
