@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";// cambiar nombre a routes
-import Home from '../components/Pages/Home'
-import ProductList from "../components/Products/ProductList";
+import Home from '../Pages/Home'
+import ProductList from '../components/Products/ProductList';
 
 const Pages = () => {
   return (
