@@ -1,31 +1,51 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../context/CartProvider";
+import { WishListContext } from "../../context/WishListContext/WishListContext";
+import { CartContext } from "../../context/CartContext/CartContext";
 import toast, { Toaster } from "react-hot-toast";
 
-
-const ProductItem = ({ id, title, price, img }) => {
+const ProductItem = ({ id, title, price, img, handleAddWished }) => {
   const value = useContext(CartContext);
   const addCart = value.addCart;
-
+  const { wishes } = useContext(WishListContext);
+  const item = {
+    id: id,
+    title: title,
+    price: price,
+    img: img,
+  };
 
   //FAV
- /*  const hearToggle = () => {
-    const provisional = wishes.find(wish => wish.id === item.id)
+  const hearToggle = () => {
+    const provisional = wishes.find((wish) => wish.id === item.id);
     if (provisional) {
-        return (
-            <button className='heartButton' type="submit" value='add' onClick={() => { handleAddWished(item) }}>
-                <i className="fa fa-heart card red" aria-hidden="true"></i>
-            </button>
-        )
+      return (
+        <button
+          className="heartButton"
+          type="submit"
+          value="add"
+          onClick={() => {
+            handleAddWished(item);
+          }}
+        >
+          <i className="fa fa-heart card red" aria-hidden="true"></i>
+        </button>
+      );
     } else {
-        return (
-            <div className='heartButton' type="submit" value='add' onClick={() => { handleAddWished(item) }}>
-                <i className="fa fa-heart card"></i>
-            </div>
-        )
+      return (
+        <div
+          className="heartButton"
+          type="submit"
+          value="add"
+          onClick={() => {
+            handleAddWished(item);
+          }}
+        >
+          <i className="fa fa-heart card"></i>
+        </div>
+      );
     }
-}
- */
+  };
+
   return (
     <div className="product">
       <a href="#">
@@ -33,6 +53,7 @@ const ProductItem = ({ id, title, price, img }) => {
           <img src={img} alt={title} />
         </div>
       </a>
+
       <div className="product__footer">
         <h1>{title}</h1>
       </div>
@@ -42,27 +63,18 @@ const ProductItem = ({ id, title, price, img }) => {
         </p>
         <button
           onClick={() => {
-           addCart(id);
+            addCart(id);
           }}
         >
-         Add to Cart
+          Add to Cart
         </button>
         <Toaster position="top-right" reverseOrder={true} />
         <h2>{}</h2>
       </div>
-      {/*  <div className="buttom">
-      <button className="btn"  onClick={() => addCart(id)}>
-        Add to Cart
-        </button>
-        <Toaster
-                            position="top-right"
-                            reverseOrder={true} />
-                             <h2>{ }</h2>
-
-      <div> */}
-      <a href="#" className="btn">
+      <div className="buttonContainer">{hearToggle()}</div>
+      {/*  <a href="#" className="btn">
         Show
-      </a>
+      </a> */}
     </div>
   );
 };

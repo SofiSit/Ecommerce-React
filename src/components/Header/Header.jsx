@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "boxicons";
 import logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../context/CartProvider";
+import { CartContext } from '../../context/CartContext/CartContext';
 
 const Header = () => {
   const value = useContext(CartContext);
@@ -31,9 +31,9 @@ const Header = () => {
         </li>
       </ul>
       <div className="containIcons">
-        <div className="heart">
-        <box-icon name="heart" color="white"></box-icon>
-      </div>
+        <Link className="heart" to="/wishlist">
+        <box-icon name="heart" color="white" ></box-icon>
+      </Link>
       <div className="cart1" onClick={toggleMenu}>
         <box-icon name="cart-alt" color="white"></box-icon>
         <span className="item__total">{cart?.length}</span>

@@ -1,12 +1,9 @@
 import React, { useReducer } from 'react'
-import wishesReducer from '../components/WishList/actions';
+import wishesReducer from '../../components/WishList/actions';
 import { WishListContext } from './WishListContext';
-import { createContext } from "react";
 
 
-export const WishListContext = createContext();
-
-const WishListProvider = ({ children }) => {
+ const WishListProvider = ({ children }) => {
     const init = () => {
         return JSON.parse(localStorage.getItem("wishes")) || [];
     }
@@ -20,8 +17,7 @@ const WishListProvider = ({ children }) => {
         </WishListContext.Provider>
     )
 }
-
-export default WishListProvider
+export default WishListProvider;
 
 
 

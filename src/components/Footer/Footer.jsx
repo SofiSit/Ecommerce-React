@@ -5,16 +5,15 @@ const Footer = () => {
         <>
             <footer>
                 <section className="ft-main">
-                    <div className="ft-main-item">
-                        <h2 className="ft-title">About</h2>
-                        <ul>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Customers</a></li>
-                            <li><a href="#">Careers</a></li>
-                        </ul>
+                <div className="ft-main-item">
+                        <h2 className="ft-title">Stay Updated</h2>
+                        <p>Get free updates before others do!</p>
+                        <form>
+                            <input type="email" name="email" placeholder="Enter email address" />
+                            <input type="submit" value="Subscribe" />
+                        </form>
                     </div>
+                   
                     <div className="ft-main-item">
                         <h2 className="ft-title">Resources</h2>
                         <ul>
@@ -32,14 +31,7 @@ const Footer = () => {
                             <li><a href="#">Advertise</a></li>
                         </ul>
                     </div>
-                    <div className="ft-main-item">
-                        <h2 className="ft-title">Stay Updated</h2>
-                        <p>Get free updates before others do!</p>
-                        <form>
-                            <input type="email" name="email" placeholder="Enter email address" />
-                            <input type="submit" value="Subscribe" />
-                        </form>
-                    </div>
+                  
                 </section>
 
 
@@ -52,7 +44,7 @@ const Footer = () => {
                         <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
                         <li><a href="#"><i className="fab fa-youtube"></i></a></li>
                     </ul>
-                </section>
+                </section> 
 
                 <section className="ft-legal">
                     <ul className="ft-legal-list">

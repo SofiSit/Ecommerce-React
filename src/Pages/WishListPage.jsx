@@ -1,10 +1,9 @@
 import React from 'react'
 import { useContext } from 'react';
 import { useEffect } from 'react';
-import TitleWishes from '../components/TitleWishes/TitleWishes';
 import WishList from '../components/WishList/WishList'
-import { CartContext } from '../../context/CartContext/CartContext';
-import { WishListContext } from '../../context/WishListContext/WishListContext';
+import { CartContext } from '../context/CartContext/CartContext'
+import { WishListContext } from '../context/WishListContext/WishListContext';
 import { notify } from '../helpers/functions';
 
 
@@ -15,9 +14,9 @@ const WishListPage = () => {
   const { wishes, dispatch } = useContext(WishListContext);
 
 
-  useEffect(() => {
-    localStorage.setItem("wishes", JSON.stringify(wishes));
-  }, [wishes]);
+  /* useEffect(() => {
+    localStorage.setItems("wishes", JSON.stringify(wishes));
+  }, [wishes]);   */
 
   function removeCart(id) {
     const removes = wishes.filter((wish, indice) => indice !== id);
@@ -53,14 +52,16 @@ const WishListPage = () => {
     
   }
 
-    useEffect(() => {
-      localStorage.setItem("items", JSON.stringify(items));
-    }, [items]);
+    /* useEffect(() => {
+      localStorage.setItems("items", JSON.stringify(items));
+    }, [items]); */
 
     return (
       <>
         
-        <TitleWishes />
+        <div className="titleContainer">
+            <h2 className='h2Title'>FAVORITES</h2>
+        </div>
         <div className="WishListContainer"  >
 
           <WishList

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CartContext } from "../../context/CartProvider";
+import { CartContext } from '../../context/CartContext/CartContext';
 
 const CartItems = () => {
   const value = useContext(CartContext); // usecontext es para usar el contexto de datacontext
