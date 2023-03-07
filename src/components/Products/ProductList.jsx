@@ -78,6 +78,7 @@ const ProductList = () => {
               price={product.price}
               img={product.img}
               id={product.id}
+              cantidad={product.cantidad}
         handleAddWished={handleAddWished}
 
             />

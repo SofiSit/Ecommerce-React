@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+/* import { useContext } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
 
@@ -15,6 +15,6 @@ export function getTotal(items) {
   export const notify = () => toast.success('Added to cart');
 
 
-
+ */
 
   

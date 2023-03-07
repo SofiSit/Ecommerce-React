@@ -1,19 +1,23 @@
-import React, {  useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { CartContext } from "./CartContext";
 import Data from "../../data/Data"; //import data
 
+/* let stored = JSON.parse(localStorage.getItem("dataCarrito")) */
 
- const CartProvider = (props) => {
+const CartProvider = (props) => {
   //crear contexto qu emaneja nuestras variables globales que en este caso son los productos, la data sera consumida de forma globla en carrito detalles y lista, creo el usestate que es el manejador de estados local, nuestro producto es un objeto que contiene los datos de cada producto.
 
   const [products, setProducts] = useState([]);
   const [menu, setMenu] = useState(false);
-  const [cart, setCart] = useState(() => {
-    const dataCart= JSON.parse(localStorage.getItem("cart"));
-    return dataCart ? dataCart:[]; //no puede ser null 
-  });
+  const getLocalStorage = localStorage.getItem("cart");
+  const [cart, setCart] = useState(getLocalStorage ? JSON.parse(getLocalStorage) : []);
+  const [total, setTotal] = useState(0);
 
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+  
   useEffect(() => {
     const producto = Data.items;
     if (producto) {
@@ -21,63 +25,54 @@ import Data from "../../data/Data"; //import data
     } else {
       setProducts([]);
     }
-
     //creamos value que pasamos por props
   }, []);
 
-/*   function addCart(product) {
-    const index = products.find(e => e.id === product.id)
-    if (index) {
-        setCart(
-            cart.map(e => e.id === product.id ? {
-                ...index,
-                quantity: index.quantity + 1
-            }
-                : e));
-    } else {
-        setCart([...cart, { ...product, quantity: 1 }])
-    }
-    const notify = () => toast.success('Added to cart');
-    console.log('add')
-    return notify();
-} */
-
   const addCart = (id) => {
-   const check = cart.every((item) => {
-       // este every lo que hace es evaluar si el item.id es !== al id del producto en el array cart
+    const check = cart.every((item) => {
+      // este every lo que hace es evaluar si el item.id es !== al id del producto en el array cart
       return item.id !== id;
     });
     if (check) {
-     
       const data = products.filter((producto) => {
-        return producto.id === id ;
+        return producto.id === id;
       });
       setCart([...cart, ...data]);
-      const popUp = () => toast.success('Added to cart');
+      const popUp = () => toast.success("Added to cart");
       return popUp();
+
     } else {
       alert("The product is already in the cart");
-    } 
-
+    }
   };
- 
-   
- /*  useEffect   ( () => {     
-   const dataCart= JSON.parse(localStorage.getItem("dataCart"))//al momento de hacer la petision s eparsea la data, peticion getitem traemos lo del ls dentro de carrito
-   if(dataCart){
-       setCart(dataCart);
-   }
-}, []);    */
 
+  //localstorage
+ 
+/*     const dataCarrito = JSON.parse(localStorage.getItem("dataCarrito"));
+    if (dataCarrito ? dataCarrito : []) {
+      setCart(dataCarrito);
+    }
+   */
+
+
+  //total de los productos en el carrito
   useEffect(() => {
-    localStorage.setItem("dataCart", JSON.stringify(cart)); // guarda nuestro localstorage dentro de data carrito parseado
-  }, [cart]); 
+    const getTotal = () => {
+      const res = cart.reduce((acum, item) => {  //acumulador e index
+        return acum + (item.price );
+      }, 0);
+      setTotal(res);
+    };
+    getTotal();
+  }, [cart]);
 
   const value = {
+    //es consumido por los componentes hijos
     products: [products],
     menu: [menu, setMenu],
     addCart: addCart,
     cart: [cart, setCart],
+    total: [total, setTotal],
   };
 
   return (

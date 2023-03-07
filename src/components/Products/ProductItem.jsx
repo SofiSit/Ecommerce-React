@@ -47,7 +47,7 @@ const ProductItem = ({ id, title, price, img, handleAddWished }) => {
   };
 
   return (
-    <div className="product">
+    <div key={id} className="product">
       <a href="#">
         <div className="product__image">
           <img src={img} alt={title} />
@@ -68,7 +68,7 @@ const ProductItem = ({ id, title, price, img, handleAddWished }) => {
         >
           Add to Cart
         </button>
-        <Toaster position="top-right" reverseOrder={true} />
+        <Toaster position="top-right"  />
         <h2>{}</h2>
       </div>
       <div className="buttonContainer">{hearToggle()}</div>

@@ -10,13 +10,11 @@ import { notify } from '../helpers/functions';
 
 const WishListPage = () => {
 
-  const { items, setItems } = useContext(CartContext);
+  const { products, setProducts } = useContext(CartContext);
   const { wishes, dispatch } = useContext(WishListContext);
 
 
-  /* useEffect(() => {
-    localStorage.setItems("wishes", JSON.stringify(wishes));
-  }, [wishes]);   */
+ 
 
   function removeCart(id) {
     const removes = wishes.filter((wish, indice) => indice !== id);
@@ -28,7 +26,7 @@ const WishListPage = () => {
     dispatch(action);
   }
 
-  function addWishToCart(wish, id) {
+  /* function addWishToCart(wish, id) {
     
     const index = items.find(e => e.id === wish.id)
     if (index) {
@@ -50,7 +48,7 @@ const WishListPage = () => {
     dispatch(action);
     return notify();
     
-  }
+  } */
 
     /* useEffect(() => {
       localStorage.setItems("items", JSON.stringify(items));
@@ -67,7 +65,6 @@ const WishListPage = () => {
           <WishList
             wishes={wishes}
             removeCart={removeCart}
-            addWishToCart={addWishToCart}
           />
 
         </div>

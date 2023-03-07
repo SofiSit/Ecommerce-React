@@ -47,15 +47,17 @@ a:hover {
   color: darksalmon;
 }
 li {
-  list-style-type: none;
+  font-size: 1rem;
+
 }
+
 header ul {
   display: flex;
   padding: 0;
   margin: 0;
 }
 header ul li {
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 header .containIcons {
