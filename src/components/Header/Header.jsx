@@ -7,7 +7,7 @@ import { CartContext } from '../../context/CartContext/CartContext';
 const Header = () => {
   const value = useContext(CartContext);
   const [menu, setMenu] = value.menu;// manejador de estado global
-  const [cart, setCart] = value.cart;// manejador de estado global]
+  const [cart] = value.cart;// manejador de estado global]
 
 
   const toggleMenu = () => {//funcion que cambia el estado del menu

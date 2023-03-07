@@ -14,10 +14,12 @@ const CartProvider = (props) => {
   const [cart, setCart] = useState(getLocalStorage ? JSON.parse(getLocalStorage) : []);
   const [total, setTotal] = useState(0);
 
+
+//localStorage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
-  
+
   useEffect(() => {
     const producto = Data.items;
     if (producto) {
@@ -42,24 +44,19 @@ const CartProvider = (props) => {
       return popUp();
 
     } else {
-      alert("The product is already in the cart");
+      const popUp = () => toast.error("Item is already in te cart");
+      return popUp();
+
     }
   };
 
-  //localstorage
- 
-/*     const dataCarrito = JSON.parse(localStorage.getItem("dataCarrito"));
-    if (dataCarrito ? dataCarrito : []) {
-      setCart(dataCarrito);
-    }
-   */
 
 
   //total de los productos en el carrito
   useEffect(() => {
     const getTotal = () => {
       const res = cart.reduce((acum, item) => {  //acumulador e index
-        return acum + (item.price );
+        return acum + (item.price * item.cantidad );
       }, 0);
       setTotal(res);
     };
