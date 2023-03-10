@@ -14,7 +14,7 @@ const ProductList = () => {
 
   //Search
   const [searchParams, setSearchParams] = useSearchParams();
-  const filter = searchParams.get("filter") ?? "";
+  const filter = searchParams.get("filter") ?? "";// si existe lo asigno a filter si no le asigno cadena vacia a filter
 
   const handleFilter = (e) => {
     setSearchParams({ filter: e.target.value });
@@ -36,7 +36,7 @@ const ProductList = () => {
       });
       return notifyWish();
     } else{
-      // parte de borrar al renderizar distintos corazones
+      
       const provisionalWish2 = wishes.filter(e => e.id !== product.id)
   
       const action= {
@@ -55,6 +55,8 @@ const ProductList = () => {
     saveWish(wishes)
     
   }, [wishes]);
+
+console.log(products);
 
 
 
@@ -76,12 +78,13 @@ const ProductList = () => {
               key={product.id}
               title={product.title}
               price={product.price}
-              img={product.img}
+              img={require(`../../assets/images/${product.img}`)}
               id={product.id}
               cantidad={product.cantidad}
         handleAddWished={handleAddWished}
 
             />
+
           ))}
       </div>
     </>

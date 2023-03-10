@@ -1,0 +1,106 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "HAND MODELING COURSE",
+      "price": 350,
+      "img": "taller-de-cerámica-2021-2.png"
+    },
+    {
+      "id": 2,
+      "title": "OVEN COURSES",
+      "price": 250,
+      "img": "MF_IMG_06_landincocciones_04.jpg"
+    },
+    {
+      "id": 3,
+      "title": "BLACK SET",
+      "price": 366,
+      "img": "106552922_3189394521099970_6746121593501423796_n.jpg"
+    },
+    {
+      "id": 4,
+      "title": "GREEN DETAILS",
+      "price": 250,
+      "img": "119001547_3384659768240110_323048813477444527_n.jpg"
+    },
+    {
+      "id": 5,
+      "title": "FOR THE TEA",
+      "price": 157,
+      "img": "95462841_3031603633545727_8140304859602616320_n.jpg"
+    },
+    {
+      "id": 6,
+      "title": "BLACK AND WHITE",
+      "price": 4599,
+      "img": "107020809_3205411372831618_732785234288453241_n.jpg"
+    },
+    {
+      "id": 7,
+      "title": "TEA SET",
+      "price": 4599,
+      "img": "122141519_3507136939325725_3302182346013971742_n.jpg"
+    },
+    {
+      "id": 8,
+      "title": "FLOWER POWER",
+      "price": 4599,
+      "img": "94203371_3010347592337998_4646091270563823616_n.jpg"
+    },
+    {
+      "id": 9,
+      "title": "SUSHI TIME",
+      "price": 4599,
+      "img": "94203371_3010347592337998_4646091270563823616_n.jpg"
+    },
+    {
+      "id": 10,
+      "title": "FULL SET",
+      "price": 4599,
+      "img": "83001553_3138872639485492_6073923803075291964_n.jpg"
+    },
+    {
+      "id": 11,
+      "title": "LATHE COURSE",
+      "price": 4599,
+      "img": "manos-alfarero-femenino-irreconocible-haciendo-jarron-arcilla-rueda-lanzamiento.jpg"
+    },
+    {
+      "id": 12,
+      "title": "BLUE PETALS",
+      "price": 557,
+      "img": "106318312_3201973446508744_7731068792012119261_n.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": 1677503316856,
+      "name": "pepe",
+      "lastName": "pepe",
+      "email": "pepe@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 1678362553842,
+      "name": "sofi",
+      "lastName": "sit",
+      "email": "sofisit@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 1678363834669,
+      "name": "pepita",
+      "lastName": "lapistolera",
+      "email": "pepi@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 1678382930270,
+      "name": "rafa",
+      "lastName": "carra",
+      "email": "rafita@gmail.com",
+      "password": "123456"
+    }
+  ]
+}

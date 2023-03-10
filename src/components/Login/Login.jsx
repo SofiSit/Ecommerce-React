@@ -6,7 +6,6 @@ import { ApiContext } from '../../context/ApiContext/ApiContext';
 import { UserContext } from '../../context/UserContext/UserContext';
 import { useNavigate } from 'react-router-dom';
 import { LoggedInContext } from '../../context/LoggedInContext/LoggedInContext';
-// import bcrypt from 'bcryptjs' 
 
 
 const Login = () => {
@@ -14,7 +13,6 @@ const Login = () => {
     //fetch
     const { userData } = useContext(UserDataContext);
     const { fetchUser } = useContext(ApiContext);
-    // const bcrypt = require('bcrypt');
 
     useEffect(() => {
         fetchUser()
@@ -22,11 +20,12 @@ const Login = () => {
 
     //LOGIN
     const navigate = useNavigate();
-    const { user, setUser } = useContext(UserContext);
+    const value2 = useContext(UserContext);
+    const [ user, setUser ] = value2.user;
     const { loggedIn, setLoggedIn } = useContext(LoggedInContext);
-
     useEffect(() => {
         sessionStorage.setItem("user", JSON.stringify(user))
+        console.log(user)
     }, [user])
 
 
@@ -37,17 +36,16 @@ const Login = () => {
         const email = target.email.value;
         const password = target.password.value;
         const authentic = userData.find(u => password === u.password) && userData.find(u => email === u.email)
-
+          console.log(userData) // busca al user ya loggeado
         if (authentic) {
             setUser(authentic);
             setLoggedIn(true);
             console.log(setLoggedIn)
-            // const passwordHash = bcrypt.hashSync(password, 10);
 
-            navigate("/shippingPage");
+            navigate("/mysession");
 
         } else {
-            console.log("credenciales no validas");
+            console.log("no exist user");
         }
     }
 
@@ -56,8 +54,7 @@ const Login = () => {
     const getUserRegister = (e) => {
         e.preventDefault();
 
-        // const password = target.password.value;
-        // const passwordHash = bcrypt.hashSync(password, 10);
+       
 
         const newUser = {
             id: new Date().getTime(),
@@ -65,9 +62,8 @@ const Login = () => {
             lastName: e.target.lastName.value,
             email: e.target.email.value,
             password: e.target.password.value,
-            // password: passwordHash
         }
-        fetch("http://localhost:3000/users", {
+        fetch("http://localhost:3001/users", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -78,17 +74,17 @@ const Login = () => {
             .catch(error => console.log(error));
         setUser(newUser);
         setLoggedIn(true); // login the new user
-        navigate("/shippingPage");
+        navigate("/ProductList");
+    
+
     }
 
 
     return (
         <>
             <div className="wrapper">
-                <div className="heading">
-                    <p></p>
-                </div>
-                <form onSubmit={getDataForm} className="form-group-login">
+                
+                <form onSubmit={getDataForm} className="form-group-login1">
                     <p className="account-heading">Sign in </p>
                     <input type="text" placeholder="email" id="email" name="email" className="email" />
                     <input type="password" placeholder="password" id="password" name="password" className="passwd" />
@@ -111,5 +107,4 @@ const Login = () => {
         </>
     )
 }
-
 export default Login

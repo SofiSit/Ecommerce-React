@@ -55,9 +55,9 @@ const CartItems = () => {
             <h2>Your cart is empty</h2>
           ) : (
             <>
-              {cart.map((product) => (
+              {cart && cart.map((product) => (
                 <div className="cart__item" key={product.id}>
-                  <img src={product.img} alt="" width={310} />
+                  <img src={require(`../../assets/images/${product.img}`)} alt="" width={310} />
                   <div>
                     <h3>{product.title}</h3>
                     <p className="price">€{product.price}</p>

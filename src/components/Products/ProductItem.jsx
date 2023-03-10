@@ -2,11 +2,16 @@ import React, { useContext } from "react";
 import { WishListContext } from "../../context/WishListContext/WishListContext";
 import { CartContext } from "../../context/CartContext/CartContext";
 import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const ProductItem = ({ id, title, price, img, handleAddWished }) => {
   const value = useContext(CartContext);
+  const value2 = useContext(WishListContext);
+  const user = value2.user;
   const addCart = value.addCart;
   const { wishes } = useContext(WishListContext);
+  const navigate = useNavigate();
+
   const item = {
     id: id,
     title: title,
@@ -14,6 +19,7 @@ const ProductItem = ({ id, title, price, img, handleAddWished }) => {
     img: img,
   };
 
+ 
   //FAV
   const hearToggle = () => {
     const provisional = wishes.find((wish) => wish.id === item.id);
@@ -57,10 +63,10 @@ const ProductItem = ({ id, title, price, img, handleAddWished }) => {
       <div className="product__footer">
         <h1>{title}</h1>
       </div>
-      <div className="product-price-btn">
-        <p>
-          <span>{price}</span> €
-        </p>
+       <div className="product-price-btn">
+         <p>
+           <span>{price}</span> €
+         </p>
         <button
           onClick={() => {
             addCart(id);
@@ -68,13 +74,11 @@ const ProductItem = ({ id, title, price, img, handleAddWished }) => {
         >
           Add to Cart
         </button>
-        <Toaster position="top-right"  />
+        <Toaster position="top-right" />
         <h2>{}</h2>
       </div>
-      <div className="buttonContainer">{hearToggle()}</div>
-      {/*  <a href="#" className="btn">
-        Show
-      </a> */}
+     <div className="buttonContainer">{hearToggle()}</div>
+     
     </div>
   );
 };

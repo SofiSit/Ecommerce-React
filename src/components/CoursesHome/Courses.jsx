@@ -21,17 +21,17 @@ const Courses = () => {
 
           <div className="news__container--column">
             <img src={img4} alt="potteryart" />
-            <h5 className="h5News">Oven technique and temperatures</h5>
+            <h5 className="h5News">Choose your own design</h5>
           </div>
 
           <div className="news__container--column">
             <img src={img5} alt="art" />
-            <h5 className="h5News"></h5>
+            <h5 className="h5News">Oven technique and temperatures</h5>
           </div>
 
           <div className="news__container--column">
             <img src={img6} alt="ceramic" />
-            <h5 className="h5News"> </h5>
+            <h5 className="h5News"> Lathe Course</h5>
           </div>
         </div>
       </div>

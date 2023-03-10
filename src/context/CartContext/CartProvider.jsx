@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { CartContext } from "./CartContext";
-import Data from "../../data/Data"; //import data
+
 
 /* let stored = JSON.parse(localStorage.getItem("dataCarrito")) */
 
@@ -20,15 +20,16 @@ const CartProvider = (props) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  useEffect(() => {
-    const producto = Data.items;
-    if (producto) {
-      setProducts(producto);
-    } else {
-      setProducts([]);
-    }
-    //creamos value que pasamos por props
-  }, []);
+  
+ useEffect(()=>{
+  const getData = async () => {
+    const res = await fetch("http://localhost:3001/products");
+    const producto = await res.json();
+    setProducts(producto);
+  }
+  getData();
+
+ }, []);
 
   const addCart = (id) => {
     const check = cart.every((item) => {
@@ -55,8 +56,8 @@ const CartProvider = (props) => {
   //total de los productos en el carrito
   useEffect(() => {
     const getTotal = () => {
-      const res = cart.reduce((acum, item) => {  //acumulador e index
-        return acum + (item.price * item.cantidad );
+      const res = cart.reduce((prev, item) => {  //acumulador e index
+        return prev + (item.price * item.cantidad );
       }, 0);
       setTotal(res);
     };

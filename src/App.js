@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import GeneralProvider from "./context/GeneralContext.jsx/GeneralProvider";
 import CartItems from "./components/Cart/CartItems";
 import Router from "./routes/Router";
+import Helper from "./components/Helper/Helper";
 
 
 
@@ -15,6 +16,7 @@ function App() {
     <BrowserRouter>
       <GeneralProvider>
         <div className="App">
+        <Helper />
           <Header />
           <CartItems />
           <Router />

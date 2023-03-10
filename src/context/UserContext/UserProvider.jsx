@@ -5,8 +5,11 @@ const UserProvider = ({children}) => {
 
     const [user, setUser] = useState(JSON.parse(sessionStorage.getItem("user")) || null );
 
+    const value2 = {
+        user:[user,setUser]
+    }
     return (
-        <UserContext.Provider value={{ user, setUser}}>
+        <UserContext.Provider value={value2}>
             {children}
         </UserContext.Provider>
     )

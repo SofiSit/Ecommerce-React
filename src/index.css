@@ -24,6 +24,13 @@ code {
 
 /*------------------HEADER------------------*/
 
+.dropdown-toggle.nav-link{
+  color:white;
+}
+.nav-item.show.dropdown{
+  
+  color:white;
+}
 header {
   width: 100%;
   min-height: 100px;
@@ -62,10 +69,18 @@ header ul li {
 
 header .containIcons {
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+  
 }
-
+header .containIcons .user {
+  cursor: pointer;
+}
+header .containIcons .user  box-icon{
+  width: 40px;
+  height: 40px;
+ color: white !important;;
+}
 header .containIcons .cart1 {
   position: relative;
   cursor: pointer;
