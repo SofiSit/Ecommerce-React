@@ -1,3 +1,21 @@
+import {
+  MDBBtn,
+  MDBCard,
+  MDBCardBody,
+  MDBCardHeader,
+  MDBCardImage,
+  MDBCol,
+  MDBContainer,
+  MDBIcon,
+  MDBInput,
+  MDBListGroup,
+  MDBListGroupItem,
+  MDBRipple,
+  MDBRow,
+  MDBTooltip,
+  MDBTypography,
+  } from "mdb-react-ui-kit";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext/CartContext";
 
@@ -40,7 +58,7 @@ const CartItems = () => {
         }
       });
       setCart([...cart]);
-    }
+    } 
   };
 
   return (
@@ -86,8 +104,27 @@ const CartItems = () => {
             </>
           )}
           <div className="cart__footer">
-            <h3>Total: ${total}</h3>
-            <button className="btn">Payment</button>
+            <h3>Total:  €{total}</h3>
+            <MDBCard className="mb-4 mb-lg-0">
+          <MDBCardBody>
+            <p>
+              <strong>We accept</strong>
+            </p>
+            <MDBCardImage className="me-2" width="45px"
+              src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+              alt="Visa" />
+            <MDBCardImage className="me-2" width="45px"
+              src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+              alt="American Express" />
+            <MDBCardImage className="me-2" width="45px"
+              src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+              alt="Mastercard" />
+            <MDBCardImage className="me-2" width="45px"
+              src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.png"
+              alt="PayPal acceptance mark" />
+          </MDBCardBody>
+        </MDBCard>
+           <Link to="/shippingpage" onClick={tooglefalse} className="btn" >Payment</Link>
           </div>
         </div>
       </div>

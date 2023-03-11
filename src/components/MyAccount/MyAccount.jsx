@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext/UserContext";
-import "./MyAccount.css";
 
 const MyAccount = () => {
   const value2 = useContext(UserContext);
