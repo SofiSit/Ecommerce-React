@@ -33,6 +33,8 @@ Putting into practice all the knowledge acquired so far, implementing them in an
 ![Cart](src/assets/img/img3.png)
 ### Login
 ![Login](./src/assets/img/img5.png)
+### Payment Page
+![Payment](src/assets/img/img6.png)
 
 
 
