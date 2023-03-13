@@ -25,7 +25,6 @@ const Login = () => {
     const { loggedIn, setLoggedIn } = useContext(LoggedInContext);
     useEffect(() => {
         sessionStorage.setItem("user", JSON.stringify(user))
-        console.log(user)
     }, [user])
 
 
@@ -36,12 +35,9 @@ const Login = () => {
         const email = target.email.value;
         const password = target.password.value;
         const authentic = userData.find(u => password === u.password) && userData.find(u => email === u.email)
-          console.log(userData) // busca al user ya loggeado
         if (authentic) {
             setUser(authentic);
             setLoggedIn(true);
-            console.log(setLoggedIn)
-
             navigate("/");
 
         } else {
