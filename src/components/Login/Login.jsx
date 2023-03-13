@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { LoggedInContext } from '../../context/LoggedInContext/LoggedInContext';
 
 
+
 const Login = () => {
     
     //fetch
@@ -41,7 +42,7 @@ const Login = () => {
             navigate("/");
 
         } else {
-            console.log("no exist user");
+            alert("No exist user");
         }
     }
 
