@@ -42,7 +42,7 @@ const Login = () => {
             setLoggedIn(true);
             console.log(setLoggedIn)
 
-            navigate("/mysession");
+            navigate("/");
 
         } else {
             console.log("no exist user");
@@ -74,7 +74,7 @@ const Login = () => {
             .catch(error => console.log(error));
         setUser(newUser);
         setLoggedIn(true); // login the new user
-        navigate("/ProductList");
+        navigate("/");
     
 
     }

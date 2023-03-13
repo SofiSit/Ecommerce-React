@@ -3,7 +3,7 @@ import i1 from '../../assets/images/trabajo-artesanal-profesional-taller(1).jpg'
 import i2 from '../../assets/images/recipiente-plato-ceramica-pintados-mesa-madera.jpg';
 import i3 from '../../assets/images/primer-plano-manos-alfarero-femenino-arcilla-rueda-alfareria.jpg'
 
-const CarouselProduct = (props) => {
+const CarouselProduct = () => {
     
   return (
    

@@ -56,7 +56,6 @@ const ProductList = () => {
     
   }, [wishes]);
 
-console.log(products);
 
 
 

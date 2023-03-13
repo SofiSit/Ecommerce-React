@@ -1,19 +1,8 @@
 import {
-  MDBBtn,
   MDBCard,
   MDBCardBody,
-  MDBCardHeader,
   MDBCardImage,
-  MDBCol,
-  MDBContainer,
-  MDBIcon,
-  MDBInput,
-  MDBListGroup,
-  MDBListGroupItem,
-  MDBRipple,
-  MDBRow,
-  MDBTooltip,
-  MDBTypography,
+  
   } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -69,7 +58,7 @@ const CartItems = () => {
         </div>
         <h2>Shop</h2>
         <div className="cart__center">
-          {cart.length === 0 ? (
+          {cart?.length === 0 ? (
             <h2>Your cart is empty</h2>
           ) : (
             <>
@@ -124,7 +113,7 @@ const CartItems = () => {
               alt="PayPal acceptance mark" />
           </MDBCardBody>
         </MDBCard>
-           <Link to="/shippingpage" onClick={tooglefalse} className="btn" >Payment</Link>
+           <Link to="/paymentpage" onClick={tooglefalse} className="btn" >Payment</Link>
           </div>
         </div>
       </div>

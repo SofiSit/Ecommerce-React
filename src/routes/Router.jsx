@@ -6,8 +6,8 @@ import Home from '../Pages/Home'
 import ProductList from '../components/Products/ProductList';
 import WishListPage from "../Pages/WishListPage";
 import LoginPage from "../Pages/LoginPage";
-import ShippingPage from "../Pages/ShippingPage";
 import ThanksBuy from "../Pages/ThanksBuy";
+import PaymentsPage from "../components/Paymentsform/Paymentsform";
 
 
 
@@ -22,7 +22,7 @@ const Pages = () => {
 
         <Route path="/mysession" element ={ <PrivateRoutes> <MySession /> </PrivateRoutes>} />
         <Route path="/wishlist" element ={<PrivateRoutes> <WishListPage /></PrivateRoutes>} />
-        <Route path="/shippingpage" element ={<PrivateRoutes> <ShippingPage /></PrivateRoutes>} />
+        <Route path="/paymentpage" element ={<PrivateRoutes> <PaymentsPage /></PrivateRoutes>} />
         <Route path="/thanksbuy" element ={<PrivateRoutes> <ThanksBuy /></PrivateRoutes>} />
 
 

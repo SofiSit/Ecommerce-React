@@ -17,6 +17,7 @@ const ProductItem = ({ id, title, price, img, handleAddWished }) => {
     title: title,
     price: price,
     img: img,
+    cantidad:0
   };
 
  

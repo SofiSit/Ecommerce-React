@@ -5,7 +5,7 @@ import { CartContext } from "./CartContext";
 
 /* let stored = JSON.parse(localStorage.getItem("dataCarrito")) */
 
-const CartProvider = (props) => {
+const CartProvider = ({children}) => {
   //crear contexto qu emaneja nuestras variables globales que en este caso son los productos, la data sera consumida de forma globla en carrito detalles y lista, creo el usestate que es el manejador de estados local, nuestro producto es un objeto que contiene los datos de cada producto.
 
   const [products, setProducts] = useState([]);
@@ -24,8 +24,16 @@ const CartProvider = (props) => {
  useEffect(()=>{
   const getData = async () => {
     const res = await fetch("http://localhost:3001/products");
-    const producto = await res.json();
-    setProducts(producto);
+    const productos = await res.json();
+  const finalProducts= productos.map((producto) => {
+      return {
+        ...producto,
+        cantidad: 0
+      }
+    }
+    )
+    console.log(finalProducts)
+    setProducts(finalProducts);
   }
   getData();
 
@@ -37,6 +45,7 @@ const CartProvider = (props) => {
       return item.id !== id;
     });
     if (check) {
+      console.log(products)
       const data = products.filter((producto) => {
         return producto.id === id;
       });
@@ -51,13 +60,12 @@ const CartProvider = (props) => {
     }
   };
 
-
-
   //total de los productos en el carrito
   useEffect(() => {
     const getTotal = () => {
-      const res = cart.reduce((prev, item) => {  //acumulador e index
-        return prev + (item.price * item.cantidad );
+      const res = cart.reduce((prev, item) => { 
+        console.log(parseInt(item.cantidad))//acumulador e index
+        return prev + (parseInt(item.price) * parseInt(item.cantidad) );
       }, 0);
       setTotal(res);
     };
@@ -74,7 +82,7 @@ const CartProvider = (props) => {
   };
 
   return (
-    <CartContext.Provider value={value}>{props.children}</CartContext.Provider>
+    <CartContext.Provider value={value}>{children}</CartContext.Provider>
   );
 };
 export default CartProvider;
