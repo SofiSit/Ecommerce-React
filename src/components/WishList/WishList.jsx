@@ -22,9 +22,6 @@ const Wishlist = ({ removeCart, wishes }) => {
         
           <span>{wish.price}</span> €
                                 <button  type="submit" value='add' onClick={() => { removeCart(indice) }} ><i className="fa fa-trash" aria-hidden="true"></i></button>
-                                <Toaster
-                            position="top-right"
-                            reverseOrder={true} />
                             </div>
                             <hr />
                         </div>
