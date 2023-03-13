@@ -230,7 +230,7 @@ header .cart1 span{
   transform: translate(-50%, -50%)
   scale(1);
   width: 50%;
-  height: 50%;
+  height: 80%;
   border-radius: 10px;
   overflow-x: scroll;
   transition: all 300ms ease-in-out;

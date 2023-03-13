@@ -23,6 +23,15 @@ Putting into practice all the knowledge acquired so far, implementing them in an
 
 -React-router-dom, Create-react-app, React-hot-toast, React-bootstrap.
 ### Home Page
+![Home] (src/assets/img/record.webm)
+
+## WishList
+![WishList] (src/assets/img/img1.png)
+### Product List
+![Product List] (src/assets/img/img2.png)
+### Cart
+![Cart] (src/assets/img/png.3)
+
 
 
 2. Future implementations
