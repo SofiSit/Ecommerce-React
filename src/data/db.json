@@ -101,6 +101,13 @@
       "lastName": "carra",
       "email": "rafita@gmail.com",
       "password": "123456"
+    },
+    {
+      "id": 1678712279927,
+      "name": "tito",
+      "lastName": "baratito",
+      "email": "tito@gmail.com",
+      "password": "123456"
     }
   ]
 }

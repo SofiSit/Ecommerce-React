@@ -28,7 +28,7 @@ const CartProvider = ({children}) => {
   const finalProducts= productos.map((producto) => {
       return {
         ...producto,
-        cantidad: 1
+        cantidad: 0
       }
     }
     )
