@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { WishListContext } from "../../context/WishListContext/WishListContext";
 import { CartContext } from "../../context/CartContext/CartContext";
 import  { Toaster } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 
 const ProductItem = ({ id, title, price, img, handleAddWished }) => {
   const value = useContext(CartContext);
