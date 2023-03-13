@@ -1,23 +1,20 @@
 import React, { useContext } from "react";
 import { WishListContext } from "../../context/WishListContext/WishListContext";
 import { CartContext } from "../../context/CartContext/CartContext";
-import toast, { Toaster } from "react-hot-toast";
+import  { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const ProductItem = ({ id, title, price, img, handleAddWished }) => {
   const value = useContext(CartContext);
-  const value2 = useContext(WishListContext);
-  const user = value2.user;
   const addCart = value.addCart;
   const { wishes } = useContext(WishListContext);
-  const navigate = useNavigate();
 
   const item = {
     id: id,
     title: title,
     price: price,
     img: img,
-    cantidad:0
+    cantidad:1
   };
 
  

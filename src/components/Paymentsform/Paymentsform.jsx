@@ -22,7 +22,8 @@ const Paymentsform = () => {
     if (click) {
       cart.length = [];
     }
-    
+
+    setCart();
   };
 
   // }

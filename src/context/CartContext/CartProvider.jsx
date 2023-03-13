@@ -28,11 +28,10 @@ const CartProvider = ({children}) => {
   const finalProducts= productos.map((producto) => {
       return {
         ...producto,
-        cantidad: 0
+        cantidad: 1
       }
     }
     )
-    console.log(finalProducts)
     setProducts(finalProducts);
   }
   getData();
@@ -45,7 +44,6 @@ const CartProvider = ({children}) => {
       return item.id !== id;
     });
     if (check) {
-      console.log(products)
       const data = products.filter((producto) => {
         return producto.id === id;
       });
