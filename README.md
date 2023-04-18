@@ -38,11 +38,8 @@ Putting into practice all the knowledge acquired so far, implementing them in an
 
 
 
-2. Future implementations
 
-    Responsive
-
-3. Advantages of using React
+1. Advantages of using React
 
     React requires less code compared to other development platforms.
     Reusable components: This makes the application more scalable and easier to maintain as errors will occur in the component's own functionality or in its communication with the rest.
